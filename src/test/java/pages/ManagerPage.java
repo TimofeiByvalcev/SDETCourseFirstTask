@@ -1,10 +1,11 @@
 package pages;
 
-import core.BasePage;
+import helpers.ReadProperties;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ManagerPage extends BasePage {
@@ -20,19 +21,24 @@ public class ManagerPage extends BasePage {
     }
 
     @Step("Click Add Customer tab")
-    public static AddCustomerPage clickAddCustomerTab() {
-
+    public AddCustomerPage clickAddCustomerTab() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(addCustomerTab));
         addCustomerTab.click();
         return new AddCustomerPage();
     }
+
     @Step("Click Customers tab")
-    public static CustomersPage clickCustomersTab() {
+    public CustomersPage clickCustomersTab() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(customersTab));
         customersTab.click();
         return new CustomersPage();
     }
+
     @Step("Open Manager page")
-    public static ManagerPage openManagerPage() {
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager");
+    public ManagerPage openManagerPage() {
+        driver.get(ReadProperties.readProperty("url"));
         return new ManagerPage();
     }
 }
