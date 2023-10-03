@@ -14,7 +14,7 @@ public class ReadProperties {
         try {
             System.getProperties().load(ClassLoader.getSystemResourceAsStream("test.properties"));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("The properties file cannot be read", e);
         }
     }
 

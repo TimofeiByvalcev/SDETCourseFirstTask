@@ -11,9 +11,16 @@ import pages.ManagerPage;
 
 import java.util.List;
 
+/**
+ * The CustomerSearchTest class provides methods for testing filters in the customer search functionality.
+ */
 @Feature("Sorting customers")
-public class TestCustomersSorting extends BaseTest {
+public class CustomersSortingTest extends BaseTest {
 
+    /**
+     * The testSortCustomerByTheFirstNameInReversedAlphabeticalOrder() method check that user can filter customers
+     * by the first name in reversed alphabetical order.
+     */
     @Test
     @Owner("Tim Byvalcev")
     @Description("Test  Case 2: Sorting in reversed alphabetical order")

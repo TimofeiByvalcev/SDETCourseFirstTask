@@ -10,10 +10,19 @@ import pages.BasePage;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * The base class for initialization and configuration web driver.
+ */
 abstract public class BaseTest {
 
+    /**
+     * The driver variable declaration.
+     */
     protected static WebDriver driver;
 
+    /**
+     * Set base configuration and execute methods before tests.
+     */
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -24,6 +33,9 @@ abstract public class BaseTest {
         ReadProperties.readProperties();
     }
 
+    /**
+     * Execute methods after tests.
+     */
     @After
     public void tearDown() {
         driver.close();

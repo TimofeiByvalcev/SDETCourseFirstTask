@@ -8,9 +8,15 @@ import org.junit.Test;
 import pages.CustomersPage;
 import pages.ManagerPage;
 
+/**
+ * The CustomerSearchTest class provides methods for testing customer search functionality.
+ */
 @Feature("Customer search")
-public class TestCustomerSearch extends BaseTest {
+public class CustomerSearchTest extends BaseTest {
 
+    /**
+     * The testSearchCustomerByTheFirstName() method check that user can search customer by the first name successfully.
+     */
     @Test
     @Owner("Tim Byvalcev")
     @Description("Test Case 1: Search by First Name")
@@ -19,6 +25,6 @@ public class TestCustomerSearch extends BaseTest {
         new ManagerPage().openManagerPage()
                 .clickCustomersTab()
                 .searchCustomerByFirstName(firstName);
-        Assert.assertTrue("Customer not found by the first name",CustomersPage.checkNamesListContainsFirstName(firstName));
+        Assert.assertTrue("Customer not found by the first name", CustomersPage.checkNamesListContainsFirstName(firstName));
     }
 }
