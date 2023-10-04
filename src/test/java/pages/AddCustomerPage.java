@@ -45,28 +45,28 @@ public class AddCustomerPage extends BasePage {
 
     @Step("Enter first name")
     public AddCustomerPage enterFirstName(String firstName) {
-        Waiters.waitVisibilityOfElement(firstNameField);
+        Waiters.waitVisibilityOfElement(driver, firstNameField);
         firstNameField.sendKeys(firstName);
         return new AddCustomerPage();
     }
 
     @Step("Enter last name")
     public AddCustomerPage enterLastName(String lastName) {
-        Waiters.waitVisibilityOfElement(lastNameField);
+        Waiters.waitVisibilityOfElement(driver, lastNameField);
         lastNameField.sendKeys(lastName);
         return new AddCustomerPage();
     }
 
     @Step("Enter post code")
     public AddCustomerPage enterPostCode(String postCode) {
-        Waiters.waitVisibilityOfElement(postCodeField);
+        Waiters.waitVisibilityOfElement(driver, postCodeField);
         postCodeField.sendKeys(postCode);
         return new AddCustomerPage();
     }
 
     @Step("Click Add Customer button")
     public AddCustomerPage clickAddCustomerButton() {
-        Waiters.waitVisibilityOfElement(addCustomerButton);
+        Waiters.waitVisibilityOfElement(driver, addCustomerButton);
         addCustomerButton.click();
         return new AddCustomerPage();
     }

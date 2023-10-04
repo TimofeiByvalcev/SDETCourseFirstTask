@@ -42,14 +42,14 @@ public class CustomersPage extends BasePage {
 
     @Step("Enter customer first name in the search field")
     public CustomersPage searchCustomerByFirstName(String firstName) {
-        Waiters.waitVisibilityOfElement(searchCustomerField);
+        Waiters.waitVisibilityOfElement(driver, searchCustomerField);
         searchCustomerField.sendKeys(firstName);
         return new CustomersPage();
     }
 
     @Step("Click first name sorting filter")
     public CustomersPage clickFirstNameSortingFilter() {
-        Waiters.waitVisibilityOfElement(firstNameFilter);
+        Waiters.waitVisibilityOfElement(driver, firstNameFilter);
         firstNameFilter.click();
         return new CustomersPage();
     }
@@ -61,7 +61,7 @@ public class CustomersPage extends BasePage {
      */
     public static List<String> collectCustomersFirstName() throws IllegalStateException {
         List<String> allFirstNames = new ArrayList<>();
-        Waiters.waitVisibilityOfElements(FIRST_NAMES);
+        Waiters.waitVisibilityOfElements(driver, FIRST_NAMES);
         driver.findElements(By.xpath(FIRST_NAMES))
                 .stream()
                 .forEach(firstName -> allFirstNames.add(firstName.getText()));

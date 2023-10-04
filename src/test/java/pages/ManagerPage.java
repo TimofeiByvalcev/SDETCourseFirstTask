@@ -34,14 +34,14 @@ public class ManagerPage extends BasePage {
 
     @Step("Click Add Customer tab")
     public AddCustomerPage clickAddCustomerTab() {
-        Waiters.waitVisibilityOfElement(addCustomerTab);
+        Waiters.waitVisibilityOfElement(driver, addCustomerTab);
         addCustomerTab.click();
         return new AddCustomerPage();
     }
 
     @Step("Click Customers tab")
     public CustomersPage clickCustomersTab() {
-        Waiters.waitVisibilityOfElement(customersTab);
+        Waiters.waitVisibilityOfElement(driver, customersTab);
         customersTab.click();
         return new CustomersPage();
     }
