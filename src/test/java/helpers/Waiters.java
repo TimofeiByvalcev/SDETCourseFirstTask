@@ -1,15 +1,21 @@
 package helpers;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import tests.BaseTest;
 
 /**
  * The Waiters class provides a methods to wait for the visibility of a web element.
  */
-public class Waiters extends BaseTest {
+public class Waiters {
+
+    /**
+     * Web driver initialization.
+     */
+    protected static WebDriver driver = new ChromeDriver();
 
     /**
      * The waitVisibilityOfElement method receives a web element as a parameter.
