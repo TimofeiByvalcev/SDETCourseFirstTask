@@ -15,7 +15,7 @@ public class Waiters {
     /**
      * The waitVisibilityOfElement method receives a web element as a parameter.
      */
-    public static void waitVisibilityOfElement(WebDriver driver,WebElement element) {
+    public static void waitVisibilityOfElement(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
